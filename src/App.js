@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 import './App.css';
+import {ValueContext} from "./context/config";
+import Form from "./components/Form";
+import TheFooter from "./components/UI/TheFooter";
 
 
 function App() {
@@ -7,6 +10,8 @@ function App() {
 	const [todo, setTodo] = useState('');
 	const [todoEditing, setTodoEditing] = useState(null) ;
 	const [editingText, setEditingText] = useState('');
+
+
 
 
 
@@ -65,50 +70,49 @@ function App() {
 	}, [todos])
 
 
+
 	return (
-		<div className="App">
-			<Form />
-			{/*<form action="" onSubmit={handleSubmit}>*/}
-			{/*	<input type="text" onChange={(e) => {*/}
-			{/*		setTodo(e.target.value);*/}
-			{/*	}} value={todo}/>*/}
-			{/*	<button type="submit">Add todo</button>*/}
-			{/*</form>*/}
+		<ValueContext.Provider value={{todos,
+			setTodos, todo, setTodo, handleSubmit}}>
+			<div className="App">
+				<Form handleSubmit={handleSubmit}/>
 
-			{todos.map((todo) => {
-				return <div key={todo.id}>
-					{todoEditing === todo.id ? (
-						<input type="text" onChange={(e)=>setEditingText(e.target.value)} value={editingText }/>
-					): (
-						<div>
-							{todo.text}
-						</div>
-					)}
+				{todos.map((todo) => {
+					return <div key={todo.id}>
+						{todoEditing === todo.id ? (
+							<input type="text" onChange={(e)=>setEditingText(e.target.value)} value={editingText }/>
+						): (
+							<div>
+								{todo.text}
+							</div>
+						)}
 
-					<button onClick={() => deleteTodo(todo.id)}>delete</button>
+						<button onClick={() => deleteTodo(todo.id)}>delete</button>
 
-					<input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>
+						<input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>
 
-					{todoEditing === todo.id ? (
-						<button onClick={()=>{editTodo(todo.id)}}> submit edit </button>
-					):(
-						<button onClick={()=>{setTodoEditing(todo.id)}}> edit todo</button>
-					)}
+						{todoEditing === todo.id ? (
+							<button onClick={()=>{editTodo(todo.id)}}> submit edit </button>
+						):(
+							<button onClick={()=>{setTodoEditing(todo.id)}}> edit todo</button>
+						)}
 
 
-				</div>;
-			})}
-		</div>
+					</div>;
+				})}
+				<TheFooter/>
+				{/*todos={activeTodos}*/}
+			</div>
+		</ValueContext.Provider>
+
 	);
 }
 
 export default App;
 
-// const Form =({handleSubmit, todo, setTodo})=>{
-// 	return <form action="" onSubmit={handleSubmit}>
-// 		<input type="text" onChange={(e) => {
-// 			setTodo(e.target.value);
-// 		}} value={todo}/>
-// 		<button type="submit">Add todo</button>
-// 	</form>
-// }
+{/*<form action="" onSubmit={handleSubmit}>*/}
+{/*	<input type="text" onChange={(e) => {*/}
+{/*		setTodo(e.target.value);*/}
+{/*	}} value={todo}/>*/}
+{/*	<button type="submit">Add todo</button>*/}
+{/*</form>*/}
