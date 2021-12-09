@@ -1,0 +1,30 @@
+.form {
+  //position: absolute;
+  //top: 20rem;
+  //left: 50%;
+  width: 30rem;
+  background: $d-blue;
+  z-index: 10;
+
+
+  .form-header{
+    @include flex-sb;
+    h1 {
+      color: $white;
+      margin: 0;
+      padding: .5rem;
+    }
+  }
+
+  .form-body{
+    //width: 100%;
+    margin: 1rem 0 0 1rem;
+    @include flex-sb;
+
+    input{
+      width: 100%;
+      background: $d-blue;
+    }
+  }
+
+}

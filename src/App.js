@@ -3,6 +3,7 @@ import './styles/main/App.scss';
 import {ValueContext} from "./context/config";
 import Form from "./components/Form";
 import TheFooter from "./components/UI/TheFooter";
+import BgDesktop from './assets/images/bg-desktop-dark.jpg';
 
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
 	const changeTheme = () => {
 		return 	setDarkTheme(!darkTheme)
 	};
-
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -80,6 +80,7 @@ function App() {
 			darkTheme, changeTheme
 		}}>
 			<div className={darkTheme ? 'themes-dark App': 'themes-light App'}>
+				<img src={BgDesktop} alt="" className='picture'/>
 				<Form handleSubmit={handleSubmit}/>
 				<TheFooter />
 

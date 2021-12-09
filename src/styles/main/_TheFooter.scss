@@ -1,0 +1,8 @@
+footer{
+ @include display_flex;
+
+ .footer-btn{
+  padding: 1rem;
+  margin: .5rem;
+ }
+}

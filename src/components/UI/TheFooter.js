@@ -59,29 +59,29 @@ const TheFooter = () => {
 	}
 
 	return (
-		<div style={{display: 'flex'}}>
-			<div className="footer">
+		<footer>
+			<div className="footer-btn">
 				<button onClick={showAllItemsLeft}>
 					<span style={{padding: ".5rem .2rem"}}>{activeTodos.length}</span> todos left
 				</button>
 
 			</div>
-			<div className="footer">
+			<div className="footer-btn">
 				<button onClick={showAllTodos}>
 					all
 				</button>
 			</div>
-			<div className="footer">
+			<div className="footer-btn">
 				<button onClick={showAllActive}>
 					active
 				</button>
 			</div>
-			<div className="footer">
+			<div className="footer-btn">
 				<button onClick={showAllCompleted}>
 					completed
 				</button>
 			</div>
-			<div className="footer">
+			<div className="footer-btn">
 				<button onClick={removeCompleted}>
 					clear
 				</button>
@@ -148,7 +148,7 @@ const TheFooter = () => {
 			</div>}
 
 
-		</div>
+		</footer>
 	)
 
 };

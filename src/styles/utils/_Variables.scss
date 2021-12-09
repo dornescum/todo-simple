@@ -1,17 +1,22 @@
-$orange: hsl(26, 100%, 55%);
-$l-orange: hsl(25, 100%, 94%);
+//lightTheme
+$white:hsl(0, 0%, 98%);
+$l-blue: hsl(236, 33%, 92%);
+$l-gray:hsl(233, 11%, 84%);
+$l-gray1:hsl(236, 9%, 61%);
+$l-blue:hsl(235, 19%, 35%);
+
+$black:hsl(235, 21%, 11%);
+$d-blue:hsl(235, 24%, 19%);
+$d-lightGray:hsl(234, 39%, 85%);
+$d-lighterGray:hsl(236, 33%, 92%);
+$d-gray:hsl(234, 11%, 52%);
+$d-gray1:hsl(233, 14%, 35%);
+$d-gray2:hsl(237, 14%, 26%);
 
 
-$blue-main: hsl(220, 13%, 13%);
-$grey: hsl(219, 9%, 45%);
-$b-grey: hsl(220, 14%, 75%);
-$l-grey: hsl(223, 64%, 98%);
 
-$white: hsl(0, 0%, 100%);
-$black: hsl(0, 0%, 75%);
-
-$box-light: 3px 15px 15px hsl(25, 100%, 94%);
-$box-dark: 3px 7px 20px hsl(26, 100%, 55%);
+//$box-light: 3px 15px 15px hsl(25, 100%, 94%);
+//$box-dark: 3px 7px 20px hsl(26, 100%, 55%);
 
 $radius: 1rem;
 $transition: all .3s ease;
