@@ -1,8 +1,13 @@
-footer{
- @include display_flex;
+footer {
+  @include display_flex;
+  flex-direction: column;
 
- .footer-btn{
-  padding: 1rem;
-  margin: .5rem;
- }
+  .footer-bottom {
+    @include display_flex;
+    .footer-btn {
+      padding: 1rem;
+      margin: .5rem;
+    }
+  }
+
 }

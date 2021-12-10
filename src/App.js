@@ -80,7 +80,7 @@ function App() {
 			darkTheme, changeTheme
 		}}>
 			<div className={darkTheme ? 'themes-dark App': 'themes-light App'}>
-				<img src={BgDesktop} alt="" className='picture'/>
+				{/*<img src={BgDesktop} alt="" className='picture'/>*/}
 				<Form handleSubmit={handleSubmit}/>
 				<TheFooter />
 
