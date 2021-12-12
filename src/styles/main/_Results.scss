@@ -1,8 +1,20 @@
 .results {
   background: red;
-  //position: absolute;
+margin: 1rem 0 0 0;
 
   .show-results {
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    .results-end{
 
+    }
   }
+}
+.line-through{
+  text-decoration: line-through;
+}
+.no-decoration{
+  text-decoration: none;
 }

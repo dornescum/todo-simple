@@ -67,25 +67,30 @@ const TheFooter = () => {
 			{itemsLeft && <div className="display">{todos.length}</div>}
 			{allTodos && <div className="results">{todos.map((todo) => {
 				return <div key={todo.id} className="show-results">
+					<input type="radio" onChange={() => toggleComplete(todo.id)}
+						   checked={editTodo ? !todo.completed : todo.completed}/>
+
 					{todoEditing === todo.id ? (
 						<input type="text" onChange={(e) => setEditingText(e.target.value)}
 							   value={editingText}/>
 					) : (
-						<div>
+						<div  className={todo.completed ? 'line-through' : 'no-decoration'}>
 							{todo.text}
 						</div>
 					)}
-					<button onClick={() => deleteTodo(todo.id)}>delete</button>
-					<input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>
-					{todoEditing === todo.id ? (
-						<button onClick={() => {
-							editTodo(todo.id);
-						}}> submit edit </button>
-					) : (
-						<button onClick={() => {
-							setTodoEditing(todo.id);
-						}}> edit todo</button>
-					)}
+					<div className='results-end'>
+						{todoEditing === todo.id ? (
+							<button onClick={() => {
+								editTodo(todo.id);
+							}}> submit edit </button>
+						) : (
+							<button onClick={() => {
+								setTodoEditing(todo.id);
+							}}> edit todo</button>
+						)}
+						<button onClick={() => deleteTodo(todo.id)}>delete</button>
+					</div>
+
 				</div>;
 			})}
 			</div>}
