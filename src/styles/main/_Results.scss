@@ -1,7 +1,8 @@
 .results {
-  background: $d-gray2;
+  //background: $d-gray2;
   margin: 1rem 0 0 0;
-  border-radius: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
 
   .show-results {
     display: flex;
@@ -36,10 +37,10 @@
     .results-end {
 
       .close-btn {
-        background: $d-gray2;
+        //background: $d-gray2;
         vertical-align: bottom;
         border: none;
-        padding-right: 1rem;
+        margin-right: 1rem;
       }
     }
   }

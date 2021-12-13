@@ -1,13 +1,14 @@
 import React, {useContext, useState} from 'react';
 import {ValueContext} from "../../context/config";
 import CrossIcon from "./CrossIcon";
+import ItemTodo from "../ItemTodo";
 // import cross from '../../assets/images/icon-cross.svg';
 
 
 const TheFooter = () => {
 	const {
 		todos, todoEditing, editingText, setEditingText, deleteTodo, toggleComplete, editTodo,
-		setTodoEditing, setTodos, setTodo
+		setTodoEditing, setTodos, setTodo, darkTheme
 	} = useContext(ValueContext);
 
 	const activeTodos = todos.filter((task) => {
@@ -63,10 +64,10 @@ const TheFooter = () => {
 	};
 
 	return (
-		<footer>
-
-
-			{itemsLeft && <div className="display">{todos.length}</div>}
+		<footer className={darkTheme ? 'themes-dark': "footer-light"}>
+			{itemsLeft && <ul className={darkTheme ? ' active-results-dark': " active-results-light"}>{todos.map((todo)=>{
+				return <li className='show-active' key={todo.id}>{todo.text}</li>;
+			})}</ul>}
 			{allTodos && <div className="results">{todos.map((todo) => {
 				return <div key={todo.id} className="show-results">
 
@@ -103,63 +104,38 @@ const TheFooter = () => {
 				</div>;
 			})}
 			</div>}
-			{activeLeft && <ul className='active-results'>{activeTodos.map((items) => {
-				return <li className='show-active'  key={items.id}>{items.text}</li>
-
-			})}</ul>}
-			{isCompleted && <ul className='active-results'>{completedTodos.map((items) => {
+			{activeLeft && <ItemTodo activeTodos={activeTodos} />}
+			{isCompleted && <ul className={darkTheme ? ' active-results-dark': " active-results-light"}>{completedTodos.map((items) => {
 				return <li className='show-active' key={items.id}>{items.text}</li>;
 			})}</ul>}
-			{clearCompleted && <div>{todos.map((todo) => {
-				return <div key={todo.id}>
-					{todoEditing === todo.id ? (
-						<input type="text" onChange={(e) => setEditingText(e.target.value)}
-							   value={editingText}/>
-					) : (
-						<div>
-							{todo.text}
-						</div>
-					)}
-					<button onClick={() => deleteTodo(todo.id)}>delete</button>
-					<input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>
-					{todoEditing === todo.id ? (
-						<button onClick={() => {
-							editTodo(todo.id);
-						}}> submit edit </button>
-					) : (
-						<button onClick={() => {
-							setTodoEditing(todo.id);
-						}}> edit todo</button>
-					)}
-				</div>;
-			})}
-			</div>}
+			{clearCompleted && <ul className={darkTheme ? ' active-results-dark': " active-results-light"}>{todos.map((todo)=>{
+				return <li className='show-active' key={todo.id}>{todo.text}</li>;
+			})}</ul>}
 
-
-			<div className="footer-bottom">
+			<div className={darkTheme ? 'themes-dark footer-bottom': 'footer-light footer-bottom'}>
 				<div className="footer-btn">
-					<button onClick={showAllItemsLeft}>
+					<button onClick={showAllItemsLeft}
+							className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>
 						<span style={{padding: ".5rem .2rem"}}>{activeTodos.length}</span> todos left
 					</button>
-
 				</div>
 				<div className="footer-btn">
-					<button onClick={showAllTodos}>
+					<button onClick={showAllTodos} className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>
 						all
 					</button>
 				</div>
 				<div className="footer-btn">
-					<button onClick={showAllActive}>
+					<button onClick={showAllActive} className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>
 						active
 					</button>
 				</div>
 				<div className="footer-btn">
-					<button onClick={showAllCompleted}>
+					<button onClick={showAllCompleted} className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>
 						completed
 					</button>
 				</div>
-				<div className="footer-btn">
-					<button onClick={removeCompleted}>
+				<div className="footer-btn" >
+					<button onClick={removeCompleted} className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>
 						clear
 					</button>
 				</div>
@@ -229,3 +205,33 @@ export default TheFooter;
 //
 // 	</div>
 // );
+
+{/*{clearCompleted && <div>{todos.map((todo) => {*/}
+{/*	return <div key={todo.id}>*/}
+{/*		{todoEditing === todo.id ? (*/}
+{/*			<input type="text" onChange={(e) => setEditingText(e.target.value)}*/}
+{/*				   value={editingText}/>*/}
+{/*		) : (*/}
+{/*			<div>*/}
+{/*				{todo.text}*/}
+{/*			</div>*/}
+{/*		)}*/}
+{/*		<button onClick={() => deleteTodo(todo.id)}>delete</button>*/}
+{/*		<input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>*/}
+{/*		{todoEditing === todo.id ? (*/}
+{/*			<button onClick={() => {*/}
+{/*				editTodo(todo.id);*/}
+{/*			}}> submit edit </button>*/}
+{/*		) : (*/}
+{/*			<button onClick={() => {*/}
+{/*				setTodoEditing(todo.id);*/}
+{/*			}}> edit todo</button>*/}
+{/*		)}*/}
+{/*	</div>;*/}
+{/*})}*/}
+{/*</div>}*/}
+
+{/*{activeLeft && <ul className='active-results'>{activeTodos.map((items) => {*/}
+{/*	return <li className='show-active'  key={items.id}>{items.text}</li>*/}
+
+{/*})}</ul>}*/}

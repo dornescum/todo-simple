@@ -1,14 +1,48 @@
 footer {
   @include display_flex;
   flex-direction: column;
+  background: $d-gray2;
+  width: 33rem;
+
 
   .footer-bottom {
-    @include display_flex;
-    .footer-btn {
+    @include flex-sb;
+
+    .footer-btn-light {
       padding: 1rem;
       margin: .5rem;
+      background: $l-gray;
+      color: $d-gray1;
+      border: none;
+      cursor: pointer;
+
+    }
+
+    .footer-btn-dark {
+      padding: 1rem;
+      margin: .5rem;
+
+      background: $d-gray2;
+      color: $d-lightGray;
+      border: none;
+      cursor: pointer;
+
+
     }
   }
 
-
 }
+
+.footer-light {
+  background: $l-gray;
+}
+
+//.footer-btn {
+//  //padding: 1rem;
+//  //margin: .5rem;
+//  button {
+//    border: none;
+//    cursor: pointer;
+//  }
+//
+//}

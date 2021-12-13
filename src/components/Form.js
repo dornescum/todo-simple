@@ -9,16 +9,16 @@ const Form = () => {
 
 	return (
 		<div className='form'>
-			<div className="form-header">
+			<div className={darkTheme ? 'themes-dark form-header': 'themes-light form-header'}>
 				<h1>TODO</h1>
 				<button onClick={changeTheme} className={darkTheme ? 'themes-dark': 'themes-light'}>change color</button>
 
 			</div>
-			<form action="" onSubmit={handleSubmit} className='form-body'>
+			<form action="" onSubmit={handleSubmit} className={darkTheme ? ' form-body-dark': ' form-body-light'}>
 				<input type="text" onChange={(e) => {
 					setTodo(e.target.value);
 				}} value={todo}/>
-				<button type="submit" className={darkTheme ? 'themes-dark': 'themes-light'}>Add todo</button>
+				<button type="submit" className={darkTheme ? 'themes-dark': 'themes-light'}>Add </button>
 
 			</form>
 			{/*<button onClick={changeTheme} className={darkTheme ? 'themes-dark': 'themes-light'}>change color</button>*/}

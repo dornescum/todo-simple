@@ -14,7 +14,19 @@
     }
   }
 
-  .form-body{
+  .form-body-light{
+    //width: 100%;
+    margin: 1rem 0 0 0;
+    @include flex-sb;
+
+    input{
+      width: 100%;
+      background: $l-gray;
+      color: $d-blue;
+    }
+  }
+
+  .form-body-dark{
     //width: 100%;
     margin: 1rem 0 0 0;
     @include flex-sb;
@@ -25,5 +37,4 @@
       color: $white;
     }
   }
-
 }
