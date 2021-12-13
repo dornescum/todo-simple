@@ -1,0 +1,13 @@
+.form-container-light{
+  border-radius: $radius;
+  background: $l-gray;
+  color: $d-gray1;
+  padding: 1rem;
+}
+.form-container-dark{
+  border-radius: $radius;
+  background: $d-blue;
+  color: $d-lightGray;
+  padding: 1rem;
+
+}

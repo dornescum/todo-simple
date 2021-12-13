@@ -21,8 +21,7 @@ footer {
     .footer-btn-dark {
       padding: 1rem;
       margin: .5rem;
-
-      background: $d-gray2;
+      background: $d-blue;
       color: $d-lightGray;
       border: none;
       cursor: pointer;
@@ -35,6 +34,10 @@ footer {
 
 .footer-light {
   background: $l-gray;
+  color: $d-gray1;
+}
+.footer-dark {
+  background: $d-blue;
 }
 
 //.footer-btn {

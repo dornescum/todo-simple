@@ -112,7 +112,7 @@ const TheFooter = () => {
 				return <li className='show-active' key={todo.id}>{todo.text}</li>;
 			})}</ul>}
 
-			<div className={darkTheme ? 'themes-dark footer-bottom': 'footer-light footer-bottom'}>
+			<div className={darkTheme ? 'footer-dark footer-bottom': 'footer-light footer-bottom'}>
 				<div className="footer-btn">
 					<button onClick={showAllItemsLeft}
 							className={darkTheme ? 'footer-btn-dark': 'footer-btn-light'}>

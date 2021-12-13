@@ -16,25 +16,56 @@
 
   .form-body-light{
     //width: 100%;
-    margin: 1rem 0 0 0;
+    margin: 0;
     @include flex-sb;
 
     input{
       width: 100%;
       background: $l-gray;
       color: $d-blue;
+      padding: 1rem 0;
     }
   }
 
   .form-body-dark{
     //width: 100%;
-    margin: 1rem 0 0 0;
+    margin:  0;
     @include flex-sb;
 
     input{
       width: 100%;
       background: $d-blue;
       color: $white;
+      padding: 1rem 0;
+
     }
   }
+}
+.bg-light {
+  background: $l-gray;
+  color: $d-gray1;
+}
+.bg-dark {
+  background: $d-blue;
+  color: $d-lightGray;
+}
+
+.moon-icon {
+  background: $l-gray;
+  color: $d-gray1;
+  border: none;
+
+}
+
+.sun-icon {
+  background: $d-blue;
+  color: $d-lightGray;
+  border: none;
+
+}
+.nothing{
+  padding: 1rem 0;
+  margin: 0;
+  background: transparent;
+  background: red;
 }

@@ -81,8 +81,11 @@ function App() {
 		}}>
 			<div className={darkTheme ? 'themes-dark App': 'themes-light App'}>
 				{/*<img src={BgDesktop} alt="" className='picture'/>*/}
-				<Form handleSubmit={handleSubmit}/>
-				<TheFooter />
+				<div className={darkTheme ? 'form-container-dark': 'form-container-light'}>
+					<Form handleSubmit={handleSubmit}/>
+					<TheFooter />
+				</div>
+
 
 
 			</div>

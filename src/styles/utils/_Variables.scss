@@ -1,19 +1,19 @@
 //lightTheme
 $white:hsl(0, 0%, 98%);
-$l-blue: hsl(236, 33%, 92%);
-$l-gray:hsl(233, 11%, 84%);
-$l-gray1:hsl(236, 9%, 61%);
-$l-blue:hsl(235, 19%, 35%);
+$l-blue: #e4e5f1; //hsl(236, 33%, 92%)
+$l-gray:#d2d3db; //hsl(233, 11%, 84%)
+$l-gray1:#9394a5; //hsl(236, 9%, 61%)
+ $l-blue:	#484b6a; //hsl(235, 19%, 35%)
 
-$black:hsl(235, 21%, 11%);
-$d-blue:hsl(235, 24%, 19%);
-$d-lightGray:hsl(234, 39%, 85%);
-$d-lighterGray:hsl(236, 33%, 92%);
-$d-gray:hsl(234, 11%, 52%);
-$d-gray1:hsl(233, 14%, 35%);
-$d-gray2:hsl(237, 14%, 26%);
+$black:#161722;  //hsl(235, 21%, 11%)
+$d-blue:#25273c;  //hsl(235, 24%, 19%)
+$d-lightGray:#cacde8; //hsl(234, 39%, 85%)
+$d-lighterGray:	#e4e5f1; //hsl(236, 33%, 92%)
+$d-gray:#777a92; //hsl(234, 11%, 52%)
+$d-gray1:#4d5066; //hsl(233, 14%, 35%)
+$d-gray2:#393a4c; //hsl(237, 14%, 26%)
 
-
+//#181824
 
 //$box-light: 3px 15px 15px hsl(25, 100%, 94%);
 //$box-dark: 3px 7px 20px hsl(26, 100%, 55%);
