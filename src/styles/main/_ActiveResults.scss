@@ -1,0 +1,13 @@
+.active-results{
+  background: $d-gray2;
+  margin: 1rem 0 0 0;
+  border-radius: $radius;
+  list-style-type: none;
+
+
+  .show-active{
+    padding: 1rem 0;
+    color: $d-lightGray;
+    @include flex-start;
+  }
+}

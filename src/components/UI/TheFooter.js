@@ -1,11 +1,13 @@
 import React, {useContext, useState} from 'react';
 import {ValueContext} from "../../context/config";
+import CrossIcon from "./CrossIcon";
+// import cross from '../../assets/images/icon-cross.svg';
 
 
 const TheFooter = () => {
 	const {
 		todos, todoEditing, editingText, setEditingText, deleteTodo, toggleComplete, editTodo,
-		setTodoEditing,
+		setTodoEditing, setTodos, setTodo
 	} = useContext(ValueContext);
 
 	const activeTodos = todos.filter((task) => {
@@ -67,43 +69,47 @@ const TheFooter = () => {
 			{itemsLeft && <div className="display">{todos.length}</div>}
 			{allTodos && <div className="results">{todos.map((todo) => {
 				return <div key={todo.id} className="show-results">
-					<input type="radio" onChange={() => toggleComplete(todo.id)}
-						   checked={editTodo ? !todo.completed : todo.completed}/>
 
-					{todoEditing === todo.id ? (
-						<input type="text" onChange={(e) => setEditingText(e.target.value)}
-							   value={editingText}/>
-					) : (
-						<div  className={todo.completed ? 'line-through' : 'no-decoration'}>
-							{todo.text}
-						</div>
-					)}
-					<div className='results-end'>
+					<div className='results-start'>
+						{/*fixme value issue*/}
+						<input type="radio" onChange={() => toggleComplete(todo.id)}
+							   checked={todo.completed }/>
+
 						{todoEditing === todo.id ? (
-							<button onClick={() => {
-								editTodo(todo.id);
-							}}> submit edit </button>
+							<input type="text" onChange={(e) => setEditingText(e.target.value)}
+								   value={editingText}/>
 						) : (
-							<button onClick={() => {
-								setTodoEditing(todo.id);
-							}}> edit todo</button>
+							<div  className={todo.completed ? 'line-through' : 'no-decoration'}>
+								<p>{todo.text}</p>
+							</div>
 						)}
-						<button onClick={() => deleteTodo(todo.id)}>delete</button>
+					</div>
+
+					<div className='results-end'>
+						{/*{todoEditing === todo.id ? (*/}
+						{/*	<button onClick={() => {*/}
+						{/*		editTodo(todo.id);*/}
+						{/*	}}> submit edit </button>*/}
+						{/*) : (*/}
+						{/*	<button onClick={() => {*/}
+						{/*		setTodoEditing(todo.id);*/}
+						{/*	}}> edit todo</button>*/}
+						{/*)}*/}
+						<button onClick={() => deleteTodo(todo.id)} className='close-btn'>
+							<CrossIcon />
+						</button>
 					</div>
 
 				</div>;
 			})}
 			</div>}
-			{activeLeft && <div>{activeTodos.map((items) => {
-				return <ul key={items.id}>
-					<li>{items.text}</li>
-				</ul>;
-			})}</div>}
-			{isCompleted && <div>{completedTodos.map((items) => {
-				return <ul key={items.id}>
-					<li>{items.text}</li>
-				</ul>;
-			})}</div>}
+			{activeLeft && <ul className='active-results'>{activeTodos.map((items) => {
+				return <li className='show-active'  key={items.id}>{items.text}</li>
+
+			})}</ul>}
+			{isCompleted && <ul className='active-results'>{completedTodos.map((items) => {
+				return <li className='show-active' key={items.id}>{items.text}</li>;
+			})}</ul>}
 			{clearCompleted && <div>{todos.map((todo) => {
 				return <div key={todo.id}>
 					{todoEditing === todo.id ? (
@@ -128,6 +134,8 @@ const TheFooter = () => {
 				</div>;
 			})}
 			</div>}
+
+
 			<div className="footer-bottom">
 				<div className="footer-btn">
 					<button onClick={showAllItemsLeft}>

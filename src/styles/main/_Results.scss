@@ -1,20 +1,54 @@
 .results {
-  background: red;
-margin: 1rem 0 0 0;
+  background: $d-gray2;
+  margin: 1rem 0 0 0;
+  border-radius: $radius;
 
   .show-results {
-      display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    .results-end{
+    color: $d-lightGray;
+    //background: $d-gray1;
+    border-bottom: 1px solid $d-gray1;
+    //width: 90%;
 
+
+    .results-start {
+      @include flex-start;
+      text-transform: capitalize;
+
+      input {
+        @include flex-self;
+        margin: 0 1rem;
+        transform: scale(2);
+      }
+
+      //input[type=radio]:checked + label::before {
+      //  background-color: #ffa;
+      //}
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .results-end {
+
+      .close-btn {
+        background: $d-gray2;
+        vertical-align: bottom;
+        border: none;
+        padding-right: 1rem;
+      }
     }
   }
 }
-.line-through{
+
+.line-through {
   text-decoration: line-through;
 }
-.no-decoration{
+
+.no-decoration {
   text-decoration: none;
 }
