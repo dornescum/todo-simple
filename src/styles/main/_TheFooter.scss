@@ -3,7 +3,10 @@ footer {
   flex-direction: column;
   background: $d-gray2;
   width: 33rem;
-
+  font-size: $font-base;
+  @media  (max-width: $xs){
+    width: 19rem;
+  }
 
   .footer-bottom {
     @include flex-sb;
@@ -15,7 +18,12 @@ footer {
       color: $d-gray1;
       border: none;
       cursor: pointer;
-
+      text-transform: capitalize;
+      font-size: $font-base;
+      @media  (max-width: $xs){
+        padding: .5rem;
+        margin: .2rem;
+      }
     }
 
     .footer-btn-dark {
@@ -25,8 +33,12 @@ footer {
       color: $d-lightGray;
       border: none;
       cursor: pointer;
-
-
+      text-transform: capitalize;
+      font-size: $font-base;
+      @media  (max-width: $xs){
+        padding: .5rem;
+        margin: .2rem;
+      }
     }
   }
 
@@ -40,12 +52,4 @@ footer {
   background: $d-blue;
 }
 
-//.footer-btn {
-//  //padding: 1rem;
-//  //margin: .5rem;
-//  button {
-//    border: none;
-//    cursor: pointer;
-//  }
-//
-//}
+

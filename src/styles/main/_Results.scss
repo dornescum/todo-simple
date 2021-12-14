@@ -23,6 +23,8 @@
         @include flex-self;
         margin: 0 1rem;
         transform: scale(2);
+        cursor: pointer;
+
       }
 
       //input[type=radio]:checked + label::before {
@@ -37,10 +39,11 @@
     .results-end {
 
       .close-btn {
-        //background: $d-gray2;
+        background: $l-gray;
         vertical-align: bottom;
         border: none;
         margin-right: 1rem;
+        cursor: pointer;
       }
     }
   }

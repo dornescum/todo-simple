@@ -3,6 +3,12 @@
   background: $l-gray;
   color: $d-gray1;
   padding: 1rem;
+  box-shadow: $box-light;
+  transition: $transition;
+  &:hover{
+    box-shadow: $box-dark;
+
+  }
 }
 .form-container-dark{
   border-radius: $radius;

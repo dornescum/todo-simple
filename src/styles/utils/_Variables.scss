@@ -15,14 +15,14 @@ $d-gray2:#393a4c; //hsl(237, 14%, 26%)
 
 //#181824
 
-//$box-light: 3px 15px 15px hsl(25, 100%, 94%);
-//$box-dark: 3px 7px 20px hsl(26, 100%, 55%);
+$box-light: 1px 3px 5px rgba(0,0,0,0.1);
+$box-dark: 2px 4px 10px rgba(0,0,0,0.3);
 
 $radius: .3rem;
 $transition: all .3s ease;
 $letter-spacing: 1.2px;
 
-$font-base: 1rem;
+$font-base: 1.1rem;
 $font-sm: 0.75* 1rem;
 $font-lg: 3.5* 1rem;
 

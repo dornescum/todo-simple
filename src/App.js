@@ -3,17 +3,12 @@ import './styles/main/App.scss';
 import {ValueContext} from "./context/config";
 import Form from "./components/Form";
 import TheFooter from "./components/UI/TheFooter";
-import BgDesktop from './assets/images/bg-desktop-dark.jpg';
 
 
 function App() {
 	const [todos, setTodos] = useState([]);
 	const [todo, setTodo] = useState('');
-	const [todoEditing, setTodoEditing] = useState(null);
-	const [editingText, setEditingText] = useState('');
-
 	const [darkTheme, setDarkTheme] = useState(false);
-
 	const changeTheme = () => {
 		return 	setDarkTheme(!darkTheme)
 	};
@@ -47,17 +42,6 @@ function App() {
 		setTodos(updatedTodos);
 	};
 
-	const editTodo = (id) => {
-		const updatedTodos = [...todos].map((todo) => {
-			if (todo.id === id) {
-				todo.text = editingText;
-			}
-			return todo; // il editez doar pe cel care are id ul corect
-		});
-		setTodos(updatedTodos);
-		setTodoEditing(null);
-		setEditingText('');
-	};
 
 	useEffect(() => {
 		const temp = localStorage.getItem('todos');
@@ -75,19 +59,13 @@ function App() {
 
 	return (
 		<ValueContext.Provider value={{
-			todos, setTodos, todo, setTodo, handleSubmit,
-			deleteTodo, todoEditing, toggleComplete, editTodo, setEditingText, setTodoEditing,
-			darkTheme, changeTheme
+			todos, setTodos, todo, setTodo, handleSubmit, deleteTodo, toggleComplete, darkTheme, changeTheme
 		}}>
 			<div className={darkTheme ? 'themes-dark App': 'themes-light App'}>
-				{/*<img src={BgDesktop} alt="" className='picture'/>*/}
 				<div className={darkTheme ? 'form-container-dark': 'form-container-light'}>
 					<Form handleSubmit={handleSubmit}/>
 					<TheFooter />
 				</div>
-
-
-
 			</div>
 		</ValueContext.Provider>
 
@@ -97,3 +75,18 @@ function App() {
 export default App;
 
 
+// const [todoEditing, setTodoEditing] = useState(null);
+// const [editingText, setEditingText] = useState('');
+
+//
+// const editTodo = (id) => {
+// 	const updatedTodos = [...todos].map((todo) => {
+// 		if (todo.id === id) {
+// 			todo.text = editingText;
+// 		}
+// 		return todo; // il editez doar pe cel care are id ul corect
+// 	});
+// 	setTodos(updatedTodos);
+// 	setTodoEditing(null);
+// 	setEditingText('');
+// };

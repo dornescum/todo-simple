@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {ValueContext} from "../context/config";
 
 
-const ItemTodo = ({activeTodos, text}) => {
+const ItemTodo = ({activeTodos}) => {
 const {darkTheme}= useContext(ValueContext);
 	return (
 		<ul className={darkTheme ? ' active-results-dark': " active-results-light"}>{activeTodos.map((items) => {
